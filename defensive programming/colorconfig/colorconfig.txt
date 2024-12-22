@@ -1,0 +1,43 @@
+
+def color_config(widget, color, event):
+    widget.configure(foreground=color)
+
+text =Label(root, text="SENSEX",font = ("Courier", 14, "bold"))
+
+text.bind("<Enter>", partial(color_config, text, "Green"))
+text.bind("<Leave>", partial(color_config, text, "black"))
+text.pack()
+text.bind("<Button-1>",sensex)
+text.place(x=350,y=120)
+text =Label(root, text="NIFTY",font = ("Courier", 14, "bold"))
+
+text.bind("<Enter>", partial(color_config, text, "green"))
+text.bind("<Leave>", partial(color_config, text, "black"))
+text.pack()
+text.bind("<Button-1>",nifty)
+text.place(x=350,y=150)
+
+text =Label(root, text="GOLD",font = ("Courier", 14, "bold"))
+
+text.bind("<Enter>", partial(color_config, text, "green"))
+text.bind("<Leave>", partial(color_config, text, "black"))
+text.pack()
+text.bind("<Button-1>",gold)
+text.place(x=350,y=180)
+
+text =Label(root, text="SILVER",font = ("Courier", 14, "bold"))
+
+text.bind("<Enter>", partial(color_config, text, "green"))
+text.bind("<Leave>", partial(color_config, text, "black"))
+text.pack()
+text.bind("<Button-1>",silver)
+text.place(x=350,y=210)
+####################################################################################################
+#TEMPERATURE CONVERTER
+widget = Button(root, text="Temperature converter", bg="lightblue" , fg="green",font = ("Tahoma", 14, "bold"), relief = RAISED, bd=5, justify = CENTER, highlightbackground = "green", overrelief = GROOVE, activebackground = "green", activeforeground="black", command=TemperatureConverter).place(x=50,y=120)
+widget = Button(root, text="Length Converter", bg="lightblue" , fg="green",font = ("Tahoma", 14, "bold"), relief = RAISED, bd=5, justify = CENTER, highlightbackground = "green", overrelief = GROOVE, activebackground = "green", activeforeground="black", command=LengthConverter).place(x=50,y=180)
+widget = Button(root, text="Area Converter", bg="lightblue" , fg="green",font = ("Tahoma", 14, "bold"), relief = RAISED, bd=5, justify = CENTER, highlightbackground = "green", overrelief = GROOVE, activebackground = "green", activeforeground="black", command=AreaConverter).place(x=50,y=240)
+widget = Button(root, text="Currency converter", bg="lightblue" , fg="green",font = ("Tahoma", 14, "bold"), relief = RAISED, bd=5, justify = CENTER, highlightbackground = "green", overrelief = GROOVE, activebackground = "green", activeforeground="black", command=CurrencyConverter).place(x=50,y=60)
+widget = Button(root, text="Weight Converter", bg="lightblue" , fg="green",font = ("Tahoma", 14, "bold"), relief = RAISED, bd=5, justify = CENTER, highlightbackground = "green", overrelief = GROOVE, activebackground = "green", activeforeground="black", command=WeightConverter).place(x=50,y=300)
+
+root.mainloop()
